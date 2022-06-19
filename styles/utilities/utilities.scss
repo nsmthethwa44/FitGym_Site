@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+// customer fonts 
+@font-face {
+  font-family: --Poppins-Black;
+  src: url(../../fonts/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: --Poppins-Regular;
+  src: url(../../fonts/Poppins-Regular.ttf);
+}
+
+// customer variables color 
+$blackIsh: #1a1a1d;
+$redIsh: #950740;
+$tomato: #c3073f;
+$white: #fff;
+$fontSize: .8rem;
+$pFF: --Poppins-Regular, "sans-serif";
+$hFF: --Poppins-Black;
+
+.menuImg{
+  padding: 1.3rem 1.3rem;
+  background: url(../../img/menu_40px.png);
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: .5s ease-in;
+  display: none;
+}
+.closeImg{
+    padding: 1.3rem 1.3rem;
+    background: url(../../img/delete_40px.png);
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    transition: .5s ease-in;
+    display: none;
+}
+
+::selection {
+  color: $white;
+  background: $tomato;
+}
+
+span{
+  color: $white;
+  background: $tomato;
+  padding: 0rem .3rem;
+  border-radius: .2rem;
+}
+
+h2{
+  font-family: $hFF;
+  line-height: 1;
+  color: $blackIsh;
+}
+h3{
+  font-family: $pFF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $blackIsh;
+}
+p, a{
+  font-family: $pFF;
+  font-size: $fontSize;
+  color: #444;
+}
+.logo {
+  gap: 1px;
+
+  h2 {
+    text-transform: uppercase;
+    color: $white;
+
+    .one {
+      color: $blackIsh;
+      background: $white;
+      border-radius: 0;
+      border-radius: .2rem 0 0 .2rem;
+    }
+
+    .two {
+      color: $white;
+      border-radius: 0 .2rem .2rem 0;
+    }
+  }
+}
+.container{
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.section{
+  padding: 80px 10px;
+  overflow: hidden;
+}
+.d-flex{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.zoomIn{
+  animation: zoomIn 1s ease-in;
+}
+@keyframes zoomIn {
+  0%{
+    transform: scale(0);
+  }
+    100%{
+    transform: scale(1);
+  }
+
+}
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $blackIsh;
+    z-index: 1;
+    opacity: .8;
+  }
+
+  .buttons{
+    gap: 1rem;
+  }
+  .btn{
+    width: 8rem;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    cursor: pointer;
+    background: transparent;
+    transition: .5s ease-in-out;
+    color: $white;
+    font-family: $pFF;
+    font-size: $fontSize;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 .5rem 5rem rgba(0,0,0,0.03);
+
+    &:hover{
+      color: $tomato;
+      background: $white;
+      border-color: $white;
+    }
+  }
+  .more{
+    border: 1px solid $tomato;
+    color: $tomato;
+
+    &:hover{
+      border-color: $white;
+    }
+  }
+
+  .title{
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2{
+      text-transform: uppercase;
+      padding-bottom: .5rem;
+      font-size: 2rem;
+    }
+  }
+
+  // small devices
+  @media screen and (max-width: 600px) {
+    .title h2 {
+      font-size: 1.5rem;
+    }
+  }
